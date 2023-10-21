@@ -1,0 +1,126 @@
+{
+  "referenceGuide":"Cite all the reference sources in the required format. Proper citations will help you avoid unnecessary trouble but does not make it acceptable to copy code. Read the course and university policy statements in this regard. When working with others, limit the discussion to block diagrams and arrows. Do not look at another students' code. Read the JSON semantics and make use of JSON validator from the Internet if needed.",
+  "websites":[
+    {
+      "title":"Introduction to Pandas",
+      "url":"https://nbviewer.org/url/clouddatascience.blob.core.windows.net/primers/pandas-primer/pandas_primer.ipynb",
+      "code":"All solutions have been written by referring to this primer",
+      "description":"This is the notebook provided in the pandas primer provided for the project 2 on Sail."
+    }
+    {
+      "title":"Introduction to Numpy",
+      "url":"https://nbviewer.org/url/clouddatascience.blob.core.windows.net/primers/numpy-primer/numpy_primer.ipynb",
+      "code":"All solutions have been written by referring to this primer",
+      "description":"This is the notebook provided in the numpy primer provided for the project 2 on Sail."
+    }
+    {
+      "title":"Recommender System",
+      "url":"https://nbviewer.org/url/clouddatascience.blob.core.windows.net/primers/recommender-system-primer/recommender_system_primer.ipynb",
+      "code":"Question 7, question 8a, question 8b, question 9, question 10 and question 11",
+      "description":"This is the notebook provided in the recommender system primer provided for the project 2 on Sail. The theory and logic behind formula and the solutions was understood from this primer. The examples used in this primer were used to test the functioning of the code written."
+    }
+    {
+      "title":"pandas.DataFrame.to_dict",
+      "url":"https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.to_dict.html",
+      "code":"Question 2 in the function movie_count_by_genre for the variable year_movie_count",
+      "description":"This method from pandas was used to convert the dataframe obtained via groupby method into a dictionary. This method directly provides an dictionary output in the form {year:movie_count}. This dictionary can be directly added against the genre in the dictionary to be returned. This saves computational time as otherwise for loops may have to used that would have increased the time complexity."
+    }
+    {
+      "title":"pandas.to_datetime",
+      "url":"https://pandas.pydata.org/docs/reference/api/pandas.to_datetime.html",
+      "code":"Question 4 function movies_reviewed_by_month for the variable ratings['standard_date']",
+      "description":"This method converts unix time to standard datetime. The parameter unit can help specify the unit in which the unix time is in i.e. seconds."
+    }
+    {
+      "title":"pandas.DataFrame.reset_index",
+      "url":"https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.reset_index.html",
+      "code":"Question 4 function movies_reviewed_by_month for the variable rating_month. Question 5 best_worst_movies function for variable best_worst_movies",
+      "description":"The groupby function in question 4 in the line above reset_index method creates a dataframe rating_month which has index as month. However, when the test cases try to check the month column it gives an key error. The key error comes when the column is not found in the columns of the dataframe. The test case code was not able to find the month key as this key was the index of the dataframe. So as to navigate this error. I used the reset index method that removes the resets the index of the DataFrame, and use the default one instead. Question 5 is a similar case as the groupby method before reset_index return a dataframe with item_id as the index."
+    }
+    {
+      "title":"pandas.DataFrame.sort_values",
+      "url":"https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.sort_values.html",
+      "code":"Question 5 function best_worst_movies for variables best_worst_movies and worst_movies",
+      "description":"This method sorts the variable best_worst_movies based on the average ratings in descending order. The method sorts the variable worst_movies based on the average ratings in ascending order"
+    }
+    {
+      "title":"pandas.Series.tolist",
+      "url":"https://pandas.pydata.org/docs/reference/api/pandas.Series.tolist.html",
+      "code":"Question 5 function best_worst_movies for variables best_movies and worst_movies. Question 11 function recommend_mf for variable max_ratings",
+      "description":"This method is used to convert a pandas series to list as a list of intergers had to be returned. Question 11 uses this method to convert max_ratings series to a list as a list of integers had to be returned."
+    }
+    {
+      "title":"pandas.DataFrame.pivot_table",
+      "url":"https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.pivot_table.html#pandas.DataFrame.pivot_table",
+      "code":"Question 6 function matrix_data for variable ratings_matrix",
+      "description":"This method creates a pivot table. The question required us to create matrix of size num_users x num_movies. This method directly helps to create that matrix and saving computaional time as this is a vectorization method. If this method would not have been used for loops would have been required which would be computationally expensive."
+    }
+    {
+      "title":"pandas.DataFrame.fillna",
+      "url":"https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.fillna.html",
+      "code":"Question 6 function matrix_data for variable ratings_matrix",
+      "description":"The question 6 stated that - If a user has not rated a movie, then the corresponding entry in the matrix should be 0. So fillna method is a vectorization method that will fill all nan values with 0 saving computational time."
+    }
+    {
+      "title":"pandas.DataFrame.to_numpy",
+      "url":"https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.to_numpy.html",
+      "code":"Question 6 function matrix_data for variable matrix_X",
+      "description":"The method was used to convert ratings_matrix dataframe to a numpy matrix with data type as integer as the question had asked to retun a numpy array. This is a vectorization method which will save computational time."
+    }
+    {
+      "title":"The numpy.ma module",
+      "url":"https://numpy.org/doc/stable/reference/maskedarray.generic.html",
+      "code":"Question 6 function matrix_data",
+      "description":"This module was used to calculate a masked matrix with only non zero entries for ratings_matrix. The np.ma.masked_equal method of this module was used for this . The np.ma.mean method was used from this module to calculate the user_means and movie_means."
+    }
+    {
+      "title":"numpy.ma.masked_equal",
+      "url":"https://numpy.org/doc/stable/reference/generated/numpy.ma.masked_equal.html#numpy.ma.masked_equal",
+      "code":"Question 6 function matrix_data for variable ratings_matrix_masked",
+      "description":"This method masks an array where its value is equal to the value given in its parameter. This method was used to calculate a masked matrix with only non zero entries for ratings_matrix. This will be used for calculating the user_means and movie_means while skipping the zero entries."
+    }
+    {
+      "title":"numpy.ma.mean",
+      "url":"https://numpy.org/doc/stable/reference/generated/numpy.ma.mean.html",
+      "code":"Question 6 function matrix_data for variables user_means and movie_means",
+      "description":"This method returns the average of the array elements along given axis. The masked entries are ignored while calculating the mean. This method was used to calculate the user_means and movie_means."
+    }
+    {
+      "title":"numpy.outer",
+      "url":"https://numpy.org/doc/stable/reference/generated/numpy.outer.html",
+      "code":"Question 7 for function cosine_similarity variable denominator",
+      "description":"The question recommended using np.outer. The method computes the outer product of two vectors which is matrix in contrast to dot product that productes a scalar. This is used to compute the denominator of cosine similarity ||A|| * ||B||."
+    }
+    {
+      "title":"numpy.count_nonzero",
+      "url":"https://numpy.org/doc/stable/reference/generated/numpy.count_nonzero.html",
+      "code":"Question 8b in function for variable denominator",
+      "description":"This method counts the number of non-zero values in a given array. This method is used to calculate the number of non-zero entries in the X_true matrix/binary matrix of X_true required to compute the average squared difference between actual and predicted values. This is used to evaluate the performance of recommender system."
+    }
+    {
+      "title":"numpy.linalg.solve",
+      "url":"https://numpy.org/doc/stable/reference/generated/numpy.linalg.solve.html",
+      "code":"Question 10 function low_rank_matrix_factorization for variable V[:, j] and U[i, :]",
+      "description":"This is recommended in the question."
+    }
+    {
+      "title":"numpy.linalg.norm",
+      "url":"https://numpy.org/doc/stable/reference/generated/numpy.linalg.norm.html",
+      "code":"Question 7 function cosine_similarity variable norm",
+      "description":"This method is used to calculate matrix or vector norm (magnitude)."
+    }
+    {
+      "title":"numpy.absolute",
+      "url":"https://numpy.org/doc/stable/reference/generated/numpy.absolute.html",
+      "code":"Question 8a function predict_user_user for variable denominator. Question 9 function predict_item_item for variable denominator",
+      "description":"This method was used to compute the denominator and use absolute value of W to avoid non-zero denominator."
+    }
+  ],
+  "collaborators":[
+    {
+      "andrewId":"<collaborator andrewId>",
+      "collaborationType":"<I helped X, X helped me, or we helped each other>",
+      "description":"<describe the idea discussed or shared>"
+    }
+  ]
+}
